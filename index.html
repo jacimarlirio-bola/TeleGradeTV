@@ -26,6 +26,10 @@
   .row input { flex:1; min-width:0; }
   button { cursor:pointer; }
   button.primary { background:var(--accent); border-color:var(--accent); }
+  #groups { display:flex; gap:8px; overflow-x:auto; padding:0 16px 10px; scrollbar-width:none; }
+  #groups::-webkit-scrollbar { display:none; }
+  #groups button { white-space:nowrap; padding:6px 14px; border-radius:999px; flex:none; }
+  #groups button.on { background:var(--accent); border-color:var(--accent); }
   ul { list-style:none; margin:0; padding:0 16px 24px; display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:8px; }
   li { display:flex; flex-direction:column; align-items:center; text-align:center; gap:6px; background:var(--card); border-radius:10px; padding:10px 6px; cursor:pointer; min-width:0; }
   li.on { outline:2px solid var(--accent); }
@@ -51,6 +55,7 @@
     <button id="load" class="primary">Carregar</button>
   </div>
 </header>
+<div id="groups"></div>
 <ul id="list"></ul>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
@@ -58,7 +63,13 @@
 const DEFAULT_LIST = 'https://iptv-org.github.io/iptv/countries/br.m3u';
 const $ = id => document.getElementById(id);
 const video = $('v'), statusEl = $('status'), listEl = $('list');
-let channels = [], hls = null;
+let channels = [], hls = null, curGroup = 'Todos';
+const GROUP_PT = { General:'Geral', Entertainment:'Entretenimento', Movies:'Filmes', Undefined:'Outros', News:'Notícias',
+  Series:'Séries', Religious:'Religião', Infantil:'Infantil', Music:'Música', Education:'Educação', Comedy:'Comédia',
+  Documentary:'Documentários', Culture:'Cultura', Classic:'Clássicos', Animation:'Animação', Sports:'Esportes',
+  Outdoor:'Campo e natureza', Lifestyle:'Estilo de vida', Legislative:'Legislativo', Family:'Família', Cooking:'Culinária',
+  Auto:'Automotivo', Public:'Público', Kids:'Infantil' };
+const groupsOf = c => (c.group || 'Undefined').split(';').map(g => GROUP_PT[g] || g);
 
 function parseM3U(text) {
   const out = [], lines = text.split(/\r?\n/);
@@ -76,17 +87,32 @@ function parseM3U(text) {
   return out;
 }
 
+function renderGroups() {
+  const n = {};
+  channels.forEach(c => new Set(groupsOf(c)).forEach(g => n[g] = (n[g] || 0) + 1));
+  const names = Object.keys(n).sort((a, b) => (a === 'Infantil' ? -1 : b === 'Infantil' ? 1 : n[b] - n[a]));
+  if (curGroup !== 'Todos' && !n[curGroup]) curGroup = 'Todos';
+  const box = $('groups'); box.innerHTML = '';
+  [['Todos', channels.length], ...names.map(g => [g, n[g]])].forEach(([g, k]) => {
+    const b = document.createElement('button');
+    b.textContent = g + ' (' + k + ')';
+    b.className = g === curGroup ? 'on' : '';
+    b.onclick = () => { curGroup = g; renderGroups(); render(); };
+    box.appendChild(b);
+  });
+}
+
 function render() {
   const q = $('q').value.toLowerCase();
   listEl.innerHTML = '';
-  channels.filter(c => c.name.toLowerCase().includes(q)).forEach(c => {
+  channels.filter(c => c.name.toLowerCase().includes(q) && (curGroup === 'Todos' || groupsOf(c).includes(curGroup))).forEach(c => {
     const li = document.createElement('li');
     li.dataset.url = c.url;
     li.innerHTML = '<img alt="" loading="lazy"><div><span></span><small></small></div>';
     li.querySelector('img').src = c.logo;
     li.querySelector('img').onerror = e => e.target.style.visibility = 'hidden';
     li.querySelector('span').textContent = c.name;
-    li.querySelector('small').textContent = c.group;
+    li.querySelector('small').textContent = groupsOf(c).join(' · ');
     li.onclick = () => play(c, li);
     listEl.appendChild(li);
   });
@@ -116,6 +142,7 @@ async function loadList(url) {
     const r = await fetch(url);
     channels = parseM3U(await r.text());
     statusEl.textContent = channels.length + ' canais. Toque em um para assistir.';
+    renderGroups();
     render();
   } catch (e) {
     statusEl.textContent = 'Não consegui carregar a lista (o servidor pode bloquear acesso pelo navegador).';

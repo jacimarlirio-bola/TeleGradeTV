@@ -1,4 +1,4 @@
-const CACHE = 'minha-tv-v7';
+const CACHE = 'minha-tv-v8';
 const FILES = ['./', 'index.html', 'manifest.json', 'icon.svg'];
 
 self.addEventListener('install', e => e.waitUntil(caches.open(CACHE).then(c => c.addAll(FILES))));
