@@ -16,7 +16,8 @@
   #player:fullscreen video { max-height:none; height:100%; }
   #bar { display:flex; align-items:center; gap:8px; padding:0 16px; }
   #bar #status { flex:1; padding:6px 0; }
-  #fs { white-space:nowrap; background:var(--accent); border-color:var(--accent); font-weight:600; }
+  #fs, #fit { white-space:nowrap; }
+  #fs { background:var(--accent); border-color:var(--accent); font-weight:600; }
   #status { color:var(--muted); font-size:13px; padding:6px 16px; min-height:28px; }
   input, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid #2a2f3a; border-radius:8px; padding:10px; }
   #q { width:100%; }
@@ -36,6 +37,7 @@
 <div id="player"><video id="v" controls playsinline autoplay></video></div>
 <div id="bar">
   <div id="status">Carregando canais…</div>
+  <button id="fit">Normal</button>
   <button id="fs">⛶ Tela cheia</button>
 </div>
 <header>
@@ -144,6 +146,15 @@ $('fs').onclick = async () => {
 document.addEventListener('fullscreenchange', () => {
   if (!document.fullscreenElement) { try { screen.orientation.unlock(); } catch (e) {} }
 });
+// formato da imagem: normal (com faixas), ampliar (corta) ou esticar
+const FITS = [['Normal', 'contain'], ['Ampliar', 'cover'], ['Esticar', 'fill']];
+let fitIdx = 0; try { fitIdx = +localStorage.getItem('fit') || 0; } catch (e) {}
+const applyFit = () => { $('v').style.objectFit = FITS[fitIdx][1]; $('fit').textContent = FITS[fitIdx][0]; };
+$('fit').onclick = () => {
+  fitIdx = (fitIdx + 1) % FITS.length; applyFit();
+  try { localStorage.setItem('fit', fitIdx); } catch (e) {}
+};
+applyFit();
 </script>
 </body>
 </html>
