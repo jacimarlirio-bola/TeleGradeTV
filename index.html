@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0f1115">
+<link rel="manifest" href="manifest.json">
+<title>Minha TV</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1d24; --fg:#eceef2; --muted:#8b93a1; --accent:#4f8cff; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px system-ui,sans-serif; }
+  header { position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 16px; }
+  video { width:100%; max-height:40vh; background:#000; display:block; }
+  #status { color:var(--muted); font-size:13px; padding:6px 16px; min-height:28px; }
+  input, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid #2a2f3a; border-radius:8px; padding:10px; }
+  #q { width:100%; }
+  .row { display:flex; gap:8px; margin-top:8px; }
+  .row input { flex:1; min-width:0; }
+  button { cursor:pointer; }
+  button.primary { background:var(--accent); border-color:var(--accent); }
+  ul { list-style:none; margin:0; padding:0 16px 24px; }
+  li { display:flex; align-items:center; gap:12px; background:var(--card); border-radius:10px; padding:10px; margin-bottom:8px; cursor:pointer; }
+  li.on { outline:2px solid var(--accent); }
+  li img { width:44px; height:44px; object-fit:contain; background:#fff1; border-radius:6px; }
+  li span { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  li small { color:var(--muted); display:block; }
+</style>
+</head>
+<body>
+<video id="v" controls playsinline autoplay></video>
+<div id="status">Carregando canais…</div>
+<header>
+  <input id="q" type="search" placeholder="Buscar canal">
+  <div class="row">
+    <input id="url" type="url" placeholder="URL de uma lista M3U">
+    <button id="load" class="primary">Carregar</button>
+  </div>
+</header>
+<ul id="list"></ul>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.5.13/hls.min.js"></script>
+<script>
+const DEFAULT_LIST = 'https://iptv-org.github.io/iptv/countries/br.m3u';
+const $ = id => document.getElementById(id);
+const video = $('v'), statusEl = $('status'), listEl = $('list');
+let channels = [], hls = null;
+
+function parseM3U(text) {
+  const out = [], lines = text.split(/\r?\n/);
+  for (let i = 0; i < lines.length; i++) {
+    if (!lines[i].startsWith('#EXTINF')) continue;
+    const info = lines[i];
+    const name = (info.split(',').pop() || '').trim();
+    const logo = (info.match(/tvg-logo="([^"]*)"/) || [])[1] || '';
+    const group = (info.match(/group-title="([^"]*)"/) || [])[1] || '';
+    let j = i + 1;
+    while (j < lines.length && (!lines[j].trim() || lines[j].startsWith('#'))) j++;
+    const url = (lines[j] || '').trim();
+    if (/^https?:/i.test(url)) out.push({ name, logo, group, url });
+  }
+  return out;
+}
+
+function render() {
+  const q = $('q').value.toLowerCase();
+  listEl.innerHTML = '';
+  channels.filter(c => c.name.toLowerCase().includes(q)).forEach(c => {
+    const li = document.createElement('li');
+    li.dataset.url = c.url;
+    li.innerHTML = '<img alt="" loading="lazy"><div><span></span><small></small></div>';
+    li.querySelector('img').src = c.logo;
+    li.querySelector('img').onerror = e => e.target.style.visibility = 'hidden';
+    li.querySelector('span').textContent = c.name;
+    li.querySelector('small').textContent = c.group;
+    li.onclick = () => play(c, li);
+    listEl.appendChild(li);
+  });
+}
+
+function play(c, li) {
+  document.querySelectorAll('li.on').forEach(e => e.classList.remove('on'));
+  li && li.classList.add('on');
+  statusEl.textContent = 'Abrindo ' + c.name + '…';
+  if (hls) { hls.destroy(); hls = null; }
+  if (Hls.isSupported()) {
+    hls = new Hls();
+    hls.loadSource(c.url);
+    hls.attachMedia(video);
+    hls.on(Hls.Events.MANIFEST_PARSED, () => { video.play().catch(() => {}); statusEl.textContent = c.name; });
+    hls.on(Hls.Events.ERROR, (_, d) => { if (d.fatal) statusEl.textContent = 'Canal fora do ar ou bloqueado: ' + c.name; });
+  } else {
+    video.src = c.url; // Safari/iOS toca HLS nativamente
+    video.play().catch(() => {});
+    statusEl.textContent = c.name;
+  }
+}
+
+async function loadList(url) {
+  statusEl.textContent = 'Carregando canais…';
+  try {
+    const r = await fetch(url);
+    channels = parseM3U(await r.text());
+    statusEl.textContent = channels.length + ' canais. Toque em um para assistir.';
+    render();
+  } catch (e) {
+    statusEl.textContent = 'Não consegui carregar a lista (o servidor pode bloquear acesso pelo navegador).';
+  }
+}
+
+$('q').oninput = render;
+$('load').onclick = () => {
+  if (!$('url').value) return;
+  try { localStorage.setItem('custom', $('url').value); } catch {}
+  loadList($('url').value);
+};
+let saved = null; try { saved = localStorage.getItem('custom'); } catch {}
+$('url').value = saved || '';
+// usa channels.m3u (gerado por check.py) se existir; senão cai na lista pública
+fetch('channels.m3u', { method: 'HEAD' })
+  .then(r => loadList(saved || (r.ok ? 'channels.m3u' : DEFAULT_LIST)))
+  .catch(() => loadList(saved || DEFAULT_LIST));
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+</script>
+</body>
+</html>
