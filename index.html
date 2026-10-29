@@ -11,7 +11,10 @@
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--fg); font:16px system-ui,sans-serif; }
   header { position:sticky; top:0; z-index:5; background:var(--bg); padding:10px 16px; }
+  #player { position:relative; }
   video { width:100%; max-height:40vh; background:#000; display:block; }
+  #player:fullscreen video { max-height:none; height:100%; }
+  #fs { position:absolute; top:8px; right:8px; padding:6px 10px; background:#000a; border-color:#fff3; font-size:18px; line-height:1; }
   #status { color:var(--muted); font-size:13px; padding:6px 16px; min-height:28px; }
   input, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid #2a2f3a; border-radius:8px; padding:10px; }
   #q { width:100%; }
@@ -28,7 +31,7 @@
 </style>
 </head>
 <body>
-<video id="v" controls playsinline autoplay></video>
+<div id="player"><video id="v" controls playsinline autoplay></video><button id="fs" title="Tela cheia">⛶</button></div>
 <div id="status">Carregando canais…</div>
 <header>
   <input id="q" type="search" placeholder="Buscar canal">
@@ -121,6 +124,21 @@ fetch('channels.m3u', { method: 'HEAD' })
   .then(r => loadList(saved || (r.ok ? 'channels.m3u' : DEFAULT_LIST)))
   .catch(() => loadList(saved || DEFAULT_LIST));
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js');
+// tela cheia: botao, e gira para paisagem ao entrar (quando o aparelho permite)
+$('fs').onclick = async () => {
+  const p = $('player'), v = $('v');
+  if (document.fullscreenElement || document.webkitFullscreenElement) {
+    (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+  } else if (p.requestFullscreen) {
+    await p.requestFullscreen().catch(() => {});
+    try { await screen.orientation.lock('landscape'); } catch (e) {}
+  } else if (v.webkitEnterFullscreen) {
+    v.webkitEnterFullscreen(); // iPhone
+  }
+};
+document.addEventListener('fullscreenchange', () => {
+  if (!document.fullscreenElement) { try { screen.orientation.unlock(); } catch (e) {} }
+});
 </script>
 </body>
 </html>
