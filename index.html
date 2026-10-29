@@ -14,7 +14,9 @@
   #player { position:relative; }
   video { width:100%; max-height:40vh; background:#000; display:block; }
   #player:fullscreen video { max-height:none; height:100%; }
-  #fs { position:absolute; top:8px; right:8px; padding:6px 10px; background:#000a; border-color:#fff3; font-size:18px; line-height:1; }
+  #bar { display:flex; align-items:center; gap:8px; padding:0 16px; }
+  #bar #status { flex:1; padding:6px 0; }
+  #fs { white-space:nowrap; background:var(--accent); border-color:var(--accent); font-weight:600; }
   #status { color:var(--muted); font-size:13px; padding:6px 16px; min-height:28px; }
   input, button { font:inherit; color:var(--fg); background:var(--card); border:1px solid #2a2f3a; border-radius:8px; padding:10px; }
   #q { width:100%; }
@@ -31,8 +33,11 @@
 </style>
 </head>
 <body>
-<div id="player"><video id="v" controls playsinline autoplay></video><button id="fs" title="Tela cheia">⛶</button></div>
-<div id="status">Carregando canais…</div>
+<div id="player"><video id="v" controls playsinline autoplay></video></div>
+<div id="bar">
+  <div id="status">Carregando canais…</div>
+  <button id="fs">⛶ Tela cheia</button>
+</div>
 <header>
   <input id="q" type="search" placeholder="Buscar canal">
   <div class="row">
