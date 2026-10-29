@@ -1,0 +1,95 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="AELatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/A%26E_Network_logo.svg/960px-A%26E_Network_logo.svg.png" group-title="Entertainment",A&E Latin America Brazil (720p)
+http://170.83.16.50/AeE/index.m3u8
+#EXTINF:-1 tvg-id="AgroCanal.br@SD" tvg-logo="https://i.imgur.com/5XyopHf.png" group-title="Education;Outdoor",AgroCanal (720p)
+http://45.162.64.114/AGRO_CANAL/index.m3u8
+#EXTINF:-1 tvg-id="AgroMais.br@SD" tvg-logo="https://i.imgur.com/sFcOZeo.png" group-title="News",AgroMais (720p)
+http://45.162.64.114/AGROMAIS/index.m3u8
+#EXTINF:-1 tvg-id="AMCLatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/3/34/AMC_logo_2019.svg/960px-AMC_logo_2019.svg.png" group-title="Movies",AMC Latin America Brazil (720p)
+http://170.83.49.66:8083/AMCHD/index.m3u8
+#EXTINF:-1 tvg-id="Arte1.br@SD" tvg-logo="https://i.imgur.com/Ivnk7A6.png" group-title="Culture",Arte 1 (720p)
+http://45.162.64.114/ARTE1/index.m3u8
+#EXTINF:-1 tvg-id="AXN.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png" group-title="Movies",AXN (Brazil) (720p)
+http://170.83.16.50/AXN/index.m3u8
+#EXTINF:-1 tvg-id="BoxKidsTV.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/1/18/Boxkidstv.png" group-title="Infantil",Box Kids TV (720p)
+http://170.83.49.66:8083/BOXKIDSHD/index.m3u8
+#EXTINF:-1 tvg-id="CanaldoBoi.br@SD" tvg-logo="https://i.imgur.com/pVM5MhS.png" group-title="Undefined",Canal do Boi (720p)
+http://45.162.64.114/CANAL_DO_BOI/index.m3u8
+#EXTINF:-1 tvg-id="CanalEducacao.br@SD" tvg-logo="https://i.imgur.com/OOB7nrS.png" group-title="Education",Canal Educacao (720p)
+http://45.162.64.114/CANAL_EDUCACAO/index.m3u8
+#EXTINF:-1 tvg-id="CanalFutura.br@SD" tvg-logo="https://i.imgur.com/LgynEBC.png" group-title="Education",Canal Futura (720p)
+http://45.162.64.114/FUTURA/index.m3u8
+#EXTINF:-1 tvg-id="CanalRural.br@SD" tvg-logo="https://i.imgur.com/w9R9IIX.png" group-title="Outdoor",Canal Rural (720p)
+http://170.83.49.66:8083/CANALRURALHD/index.m3u8
+#EXTINF:-1 tvg-id="CartoonNetworkLatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Cartoon_Network_2010_logo.svg/960px-Cartoon_Network_2010_logo.svg.png" group-title="Infantil",Cartoon Network Latin America Brazil (720p)
+http://45.162.64.114/CARTOON_NETWORK/index.m3u8
+#EXTINF:-1 tvg-id="CazeTV.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/en/thumb/6/64/Caz%C3%A9TV_logo.svg/1280px-Caz%C3%A9TV_logo.svg.png" group-title="Sports",CazeTV
+http://138.204.86.4:8080/CAZE_TV/playlist.m3u8
+#EXTINF:-1 tvg-id="DiscoveryChannelLatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/2019_Discovery_logo.svg/960px-2019_Discovery_logo.svg.png" group-title="Entertainment",Discovery Channel Latin America Brazil (720p)
+http://45.162.64.114/DISCOVERY_CHANNEL/index.m3u8
+#EXTINF:-1 tvg-id="DumDum.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/c/c0/DumDum_logo.svg" group-title="Infantil",DumDum (720p)
+http://45.162.64.114/ZOOMOO_KIDS/index.m3u8
+#EXTINF:-1 tvg-id="ESPN4.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/ESPN_4_logo.svg/960px-ESPN_4_logo.svg.png" group-title="Sports",ESPN 4 (Brazil) (1080p)
+http://181.78.197.59:8000/play/a07n/index.m3u8
+#EXTINF:-1 tvg-id="ESPN.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/ESPN_wordmark.svg/960px-ESPN_wordmark.svg.png" group-title="Sports",ESPN (Brazil) (1080p)
+http://181.78.197.59:8000/play/a07z/index.m3u8
+#EXTINF:-1 tvg-id="Futura.br@SD" tvg-logo="https://i.ibb.co/Pz6Nqk7w/logo-futura-vazado.png" group-title="Education",Futura (720p)
+http://170.83.49.66:8083/FUTURAHD/index.m3u8
+#EXTINF:-1 tvg-id="JovemPanNews.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Jovem_Pan_logo_2018.svg/960px-Jovem_Pan_logo_2018.svg.png" group-title="News",Jovem Pan News (720p)
+http://170.83.49.66:8083/JOVEMPANNEWSHD/index.m3u8
+#EXTINF:-1 tvg-id="LifetimeLatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Logo_Lifetime_2020.svg/960px-Logo_Lifetime_2020.svg.png" group-title="Entertainment",Lifetime Latin America Brazil (720p)
+http://170.83.16.50/LIFETIME/index.m3u8
+#EXTINF:-1 tvg-id="NovaEraTV.br@SD" tvg-logo="https://i.imgur.com/IK3F9Uq.png" group-title="Undefined",Nova Era TV (1080p) [Not 24/7]
+http://wz3.dnip.com.br:1935/novaeratv/novaeratv.sdp/live.m3u8
+#EXTINF:-1 tvg-id="NovoTempo.br@SD" tvg-logo="" group-title="Religious",Novo Tempo (720p)
+http://45.162.64.114/NOVO_TEMPO/index.m3u8
+#EXTINF:-1 tvg-id="PlayTV.br@SD" tvg-logo="https://i.imgur.com/Ikrj3lk.png" group-title="Undefined",Play TV (Brazil) (720p)
+http://45.162.64.114/PLAY_TV/index.m3u8
+#EXTINF:-1 tvg-id="PrimerTV.br@SD" tvg-logo="https://i.imgur.com/PMptSP3.png" group-title="General",Primer TV (1080p)
+http://200.194.238.229:8383/live/primer/playlist.m3u8
+#EXTINF:-1 tvg-id="RecordNews.br@SD" tvg-logo="https://i.imgur.com/HZDRG0K.png" group-title="News",Record News (720p)
+http://45.162.64.114/RECORD_NEWS/index.m3u8
+#EXTINF:-1 tvg-id="RedeCNTRiodeJaneiro.br@SD" tvg-logo="https://i.imgur.com/jcasAmw.png" group-title="Undefined",Rede CNT Rio de Janeiro (720p)
+http://45.162.64.114/CNT/index.m3u8
+#EXTINF:-1 tvg-id="RedeSeculo21.br@SD" tvg-logo="" group-title="Religious",Rede Seculo 21 (720p)
+http://45.162.64.114/REDE_SECULO_21/index.m3u8
+#EXTINF:-1 tvg-id="RedeTV.br@SD" tvg-logo="https://i.imgur.com/ZJgD38F.png" group-title="General",Rede TV! SD (720p)
+http://45.162.64.114/REDE_TV/index.m3u8
+#EXTINF:-1 tvg-id="SonyChannel.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Sony_Channel_Logo.png/960px-Sony_Channel_Logo.png" group-title="Undefined",Sony Channel (Brazil) (720p)
+http://170.83.16.50/SONY_CHANNEL/index.m3u8
+#EXTINF:-1 tvg-id="SonyMovies.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Sony_Movies_Logo.svg/500px-Sony_Movies_Logo.svg.png" group-title="Movies",Sony Movies (720p)
+http://45.162.64.114/SONY_MOVIES/index.m3u8
+#EXTINF:-1 tvg-id="StudioUniversalLatinAmerica.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/StudioUniversal2016.png/960px-StudioUniversal2016.png" group-title="Undefined",Studio Universal Latin America Brazil (720p)
+http://187.102.210.46/universo/index.m3u8
+#EXTINF:-1 tvg-id="TerraViva.br@SD" tvg-logo="https://i.imgur.com/wnYsE3O.png" group-title="Outdoor",Terra Viva (720p)
+http://45.162.64.114/TERRAVIVA/index.m3u8
+#EXTINF:-1 tvg-id="TNTNovelas.us@Brazil" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/TNT_Novelas_2025.svg/1920px-TNT_Novelas_2025.svg.png" group-title="Series",TNT Novelas Brazil (720p)
+http://45.162.64.114/TNT_NOVELAS/index.m3u8
+#EXTINF:-1 tvg-id="TVAparecida.br@SD" tvg-logo="https://i.imgur.com/kxrja0X.png" group-title="Religious",TV Aparecida (720p)
+http://45.162.64.114/TV_APARECIDA/index.m3u8
+#EXTINF:-1 tvg-id="TVBrasil.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/TvBrasil2023.png/960px-TvBrasil2023.png" group-title="Undefined",TV Brasil (720p)
+http://45.162.64.114/TV_BRASIL/index.m3u8
+#EXTINF:-1 tvg-id="TVCancaoNova.br@SD" tvg-logo="https://i.imgur.com/OaM9hkH.png" group-title="Undefined",TV Cancao Nova (720p)
+http://45.162.64.114/CANCAO_NOVA/index.m3u8
+#EXTINF:-1 tvg-id="TVCultura.br@SD" tvg-logo="https://i.ibb.co/nm0jXMM/cultura-3x.png" group-title="Undefined",TV Cultura (720p)
+http://45.162.64.114/TV_CULTURA/index.m3u8
+#EXTINF:-1 tvg-id="TVEvangelizar.br@SD" tvg-logo="https://i.imgur.com/IrYR7Kp.png" group-title="Religious",TV Evangelizar (720p)
+http://45.162.64.114/EVANGELIZAR/index.m3u8
+#EXTINF:-1 tvg-id="TVGazeta.br@SD" tvg-logo="https://i.imgur.com/0sksWse.png" group-title="Undefined",TV Gazeta (720p)
+http://45.162.64.114/TV_GAZETA/index.m3u8
+#EXTINF:-1 tvg-id="TVJustica.br@SD" tvg-logo="https://i.imgur.com/rOQKiMO.png" group-title="Undefined",TV Justica (720p)
+http://45.162.64.114/TV_JUSTICA/index.m3u8
+#EXTINF:-1 tvg-id="TVNatal.br@SD" tvg-logo="https://i.imgur.com/wqQmQml.png" group-title="Entertainment;General;News",TV Natal (1080p)
+http://185.228.163.146:8000/play/a01y/index.m3u8
+#EXTINF:-1 tvg-id="TVPaiEterno.br@SD" tvg-logo="https://i.imgur.com/iuoXchN.png" group-title="Religious",TV Pai Eterno (720p)
+http://45.162.64.114/TV_PAI_ETERNO/index.m3u8
+#EXTINF:-1 tvg-id="TVParanaTurismo.br@SD" tvg-logo="https://i.imgur.com/I6pKoBd.png" group-title="Travel",TV Parana Turismo (720p) [Not 24/7]
+http://200.189.113.201/hls/tve.m3u8
+#EXTINF:-1 tvg-id="TVSenado.br@SD" tvg-logo="https://i.imgur.com/duy6waL.png" group-title="Undefined",TV Senado (Brazil) (720p)
+http://45.162.64.114/TV_SENADO/index.m3u8
+#EXTINF:-1 tvg-id="TVVicosa.br@SD" tvg-logo="https://i.imgur.com/TZF55f9.png" group-title="Entertainment",TV Vicosa (480p)
+http://wz4.dnip.com.br/fratevitv/fratevitv.sdp/playlist.m3u8
+#EXTINF:-1 tvg-id="TVEBahia.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/TVE_Bahia_logo.svg/960px-TVE_Bahia_logo.svg.png" group-title="Undefined",TVE Bahia (1080p)
+http://streaming.procergs.com.br:1935/tve/stve/playlist.m3u8
+#EXTINF:-1 tvg-id="WooHoo.br@SD" tvg-logo="https://i.imgur.com/me622pa.png" group-title="Undefined",WooHoo (720p)
+http://45.162.64.114/WOOHOO/index.m3u8
