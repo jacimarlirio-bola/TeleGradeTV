@@ -14,6 +14,7 @@ CANAIS = [
     ('Record News', 'News', 'UCuiLR4p6wQ3xLEm15pEn1Xw', None),
     ('Jovem Pan News', 'News', 'UCP391YRAjSOdM_bwievgaZA', None),
     ('Canal Gov', 'Public', 'UCjaWLFTNqLkq3ZY2BJ4NYRg', None),
+    ('CazéTV', 'Sports', 'UCZiYbVptd3PVPf4f6eR6UaQ', None),
     ('TV Aparecida', 'Religious', 'UCfYrK5JU5EznsnK3wQE7iIg', None),
 ]
 HDR = {'User-Agent': 'Mozilla/5.0', 'Accept-Language': 'pt-BR', 'Cookie': 'CONSENT=YES+1; SOCS=CAI'}
