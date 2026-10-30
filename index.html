@@ -13,6 +13,8 @@
   #top { position:sticky; top:0; z-index:5; background:var(--bg); }
   header { background:var(--bg); padding:10px 16px; }
   #player { position:relative; }
+  #player iframe { width:100%; aspect-ratio:16/9; max-height:40vh; border:0; background:#000; display:block; }
+  #player:fullscreen iframe { max-height:none; height:100%; aspect-ratio:auto; }
   video { width:100%; max-height:40vh; background:#000; display:block; }
   #player:fullscreen video { max-height:none; height:100%; }
   #bar { display:flex; align-items:center; gap:8px; padding:0 16px; }
@@ -123,6 +125,17 @@ function play(c, li) {
   li && li.classList.add('on');
   statusEl.textContent = 'Abrindo ' + c.name + '…';
   if (hls) { hls.destroy(); hls = null; }
+  const old = $('yt'); if (old) old.remove();
+  if (/^https:\/\/www\.youtube\.com\/embed\//.test(c.url)) {
+    video.pause(); video.removeAttribute('src'); video.load(); video.style.display = 'none';
+    const f = document.createElement('iframe');
+    f.id = 'yt'; f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen'; f.allowFullscreen = true;
+    f.src = c.url + (c.url.includes('?') ? '&' : '?') + 'autoplay=1&playsinline=1';
+    $('player').appendChild(f);
+    statusEl.textContent = c.name;
+    return;
+  }
+  video.style.display = '';
   if (Hls.isSupported()) {
     hls = new Hls();
     hls.loadSource(c.url);
@@ -141,6 +154,9 @@ async function loadList(url) {
   try {
     const r = await fetch(url);
     channels = parseM3U(await r.text());
+    if (url === 'channels.m3u') {
+      try { const y = await fetch('youtube.m3u'); if (y.ok) channels = parseM3U(await y.text()).concat(channels); } catch (e) {}
+    }
     statusEl.textContent = channels.length + ' canais. Toque em um para assistir.';
     renderGroups();
     render();
