@@ -1,22 +1,21 @@
 #EXTM3U
-# Canais que transmitem ao vivo no YouTube (player incorporado). Lista manual: so fontes oficiais/jornalisticas.
 #EXTINF:-1 group-title="Legislative",TV Senado (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCLgti7NuK0RuW9wty-fxPjQ
+https://www.youtube.com/embed/_oRKuCnB3zI
 #EXTINF:-1 group-title="Legislative",TV Câmara (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UC-ZkSRh-7UEuwXJQ9UMCFJA
+https://www.youtube.com/embed/YswTiRBB7xE
 #EXTINF:-1 group-title="Legislative",TV Justiça (YouTube)
 https://www.youtube.com/embed/XfwDB9udBLw
 #EXTINF:-1 group-title="News",CNN Brasil (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCvdwhh_fDyWccR42-rReZLw
+https://www.youtube.com/embed/oNRSSMvifc0
 #EXTINF:-1 group-title="News",Band Jornalismo (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCoa-D_VfMkFrCYodrOC9-mA
+https://www.youtube.com/embed/KP6kmcbUiow
 #EXTINF:-1 group-title="News",SBT News (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UC376n347Ob5Lwzq2WGzF1AA
+https://www.youtube.com/embed/utqnAY5lZ8Y
 #EXTINF:-1 group-title="News",Record News (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCuiLR4p6wQ3xLEm15pEn1Xw
-#EXTINF:-1 group-title="Public",Canal Gov (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCjaWLFTNqLkq3ZY2BJ4NYRg
+https://www.youtube.com/embed/P0DCupirlj4
 #EXTINF:-1 group-title="News",Jovem Pan News (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCP391YRAjSOdM_bwievgaZA
+https://www.youtube.com/embed/fmXSEMrNN7A
+#EXTINF:-1 group-title="Public",Canal Gov (YouTube)
+https://www.youtube.com/embed/nqfph9USEYA
 #EXTINF:-1 group-title="Religious",TV Aparecida (YouTube)
-https://www.youtube.com/embed/live_stream?channel=UCfYrK5JU5EznsnK3wQE7iIg
+https://www.youtube.com/embed/4CAmwaFJo6k
