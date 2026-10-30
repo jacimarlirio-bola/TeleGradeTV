@@ -104,10 +104,12 @@ function renderGroups() {
   });
 }
 
+const norm = t => t.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+
 function render() {
-  const q = $('q').value.toLowerCase();
+  const q = norm($('q').value);
   listEl.innerHTML = '';
-  channels.filter(c => c.name.toLowerCase().includes(q) && (curGroup === 'Todos' || groupsOf(c).includes(curGroup))).forEach(c => {
+  channels.filter(c => norm(c.name).includes(q) && (q || curGroup === 'Todos' || groupsOf(c).includes(curGroup))).forEach(c => {
     const li = document.createElement('li');
     li.dataset.url = c.url;
     li.innerHTML = '<img alt="" loading="lazy"><div><span></span><small></small></div>';
