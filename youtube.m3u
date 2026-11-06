@@ -1,13 +1,15 @@
 #EXTM3U
+#EXTINF:-1 group-title="Legislative",TV Senado (YouTube)
+https://www.youtube.com/embed/JuG2NBq7KXU
 #EXTINF:-1 group-title="Legislative",TV Câmara (YouTube)
-https://www.youtube.com/embed/ru8Fb0h1rtM
+https://www.youtube.com/embed/n3s7UfvZHLM
 #EXTINF:-1 group-title="Legislative",TV Justiça (YouTube)
 https://www.youtube.com/embed/XfwDB9udBLw
 #EXTINF:-1 group-title="News",CNN Brasil (YouTube)
-https://www.youtube.com/embed/uA6v07JCQzA
+https://www.youtube.com/embed/XP1EgonxIN8
 #EXTINF:-1 group-title="News",SBT News (YouTube)
-https://www.youtube.com/embed/2zB8CR9PQfs
+https://www.youtube.com/embed/AB7G67UPC_E
 #EXTINF:-1 group-title="News",Record News (YouTube)
-https://www.youtube.com/embed/FDTg78cnWLw
+https://www.youtube.com/embed/hHAroT7wE0U
 #EXTINF:-1 group-title="News",Jovem Pan News (YouTube)
-https://www.youtube.com/embed/jNk34ajF5dc
+https://www.youtube.com/embed/HU_yxPEXNk0
