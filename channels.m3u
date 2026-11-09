@@ -11,8 +11,6 @@ https://video05.logicahost.com.br/ararunatv/ararunatv/playlist.m3u8
 https://awtv.nuvemplay.live/hls/stream.m3u8
 #EXTINF:-1 tvg-id="BemMaisTV.br@HD" tvg-logo="https://bemmaistv.com.br/wp-content/uploads/2025/08/0LASAmOtt4-150x150.jpg" http-referrer="https://bemmaistv.com.br/" group-title="Culture;Education",Bem Mais TV (1080p)
 https://video09.logicahost.com.br/bemmaistv01/bemmaistv01/playlist.m3u8
-#EXTINF:-1 tvg-id="Blitstv.br@SD" tvg-logo="https://i.imgur.com/FO4QTRf.jpeg" group-title="Entertainment",Blitstv
-https://stmv1.transmissaodigital.com/blitstv/blitstv/playlist.m3u8
 #EXTINF:-1 tvg-id="BobEsponjaCalcaQuadrada.us@BR" tvg-logo="https://images.pluto.tv/channels/62545c0b002f4b0007688b61/colorLogoPNG.png" group-title="Infantil",Bob Esponja Calca Quadrada (720p)
 https://jmp2.uk/plu-62545c0b002f4b0007688b61.m3u8
 #EXTINF:-1 tvg-id="Canal38.br@SD" tvg-logo="https://i.imgur.com/co7TCWC.png" group-title="News",Canal 38 (720p)
@@ -117,8 +115,6 @@ https://appletree-mytime-samsungbrazil.amagi.tv/playlist.m3u8
 https://stmv2.srvif.com/nicktoons/nicktoons/playlist.m3u8
 #EXTINF:-1 tvg-id="NickelodeonTeen.us@BR" tvg-logo="https://images.pluto.tv/channels/60f5fabf0721880007cd50e3/colorLogoPNG_1767888207915.png" group-title="Infantil",Nickelodeon Teen (720p)
 https://jmp2.uk/plu-60f5fabf0721880007cd50e3.m3u8
-#EXTINF:-1 tvg-id="NickOnline.br@HD" tvg-logo="https://x1colegal.com/logo.png" group-title="Infantil",NickOnline HD (720p)
-https://x1colegal.com/hls/stream.m3u8
 #EXTINF:-1 tvg-id="ODiaTV.br@SD" tvg-logo="https://i.imgur.com/1LUbAVP.png" group-title="General",O Dia TV
 https://6836041ea1117.streamlock.net/tvodia/tvodia/playlist.m3u8
 #EXTINF:-1 tvg-id="OEncantadordeCaes.us@Brazil" tvg-logo="https://i.imgur.com/sQn6vvh.png" group-title="Education",O Encantador de Caes
@@ -221,6 +217,8 @@ https://acesso.ecast.site:3648/live/ritlive.m3u8
 https://video09.logicahost.com.br/sbtcuiaba/sbtcuiaba/playlist.m3u8
 #EXTINF:-1 tvg-id="SBTInterior.br@SD" tvg-logo="https://i.imgur.com/IkZfa4j.png" group-title="General",SBT Interior (720p)
 https://cdn.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/playlist.m3u8
+#EXTINF:-1 tvg-id="SBTNacional.br@SD" tvg-logo="https://i.imgur.com/tc1ALuu.png" group-title="Undefined",SBT Nacional (1080p)
+https://cdn.live.br1.jmvstream.com/w/LVW-10801/LVW10801_Xvg4R0u57n/chunklist.m3u8
 #EXTINF:-1 tvg-id="SBTNews.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/commons/4/42/SBT_News_2025.svg" group-title="News",SBT News (720p)
 https://dai.google.com/linear/hls/event/1XSOdtQ0SH2G8OEmEfGgjQ/master.m3u8
 #EXTINF:-1 tvg-id="SBTNovaMutum.br@SD" tvg-logo="https://upload.wikimedia.org/wikipedia/pt/d/d0/Logotipo_do_SBT_Nova_Mutum.png" group-title="Undefined",SBT Nova Mutum
@@ -255,6 +253,8 @@ https://stmv1.samcast.com.br/giovane7843/giovane7843/playlist.m3u8
 https://video01.logicahost.com.br/tvalianca/tvalianca/playlist.m3u8
 #EXTINF:-1 tvg-id="TVAlternativa.br@SD" tvg-logo="https://i.imgur.com/wM9xXhc.png" group-title="General",TV Alternativa (410p)
 https://stmv5.samcast.com.br/wagner7919/wagner7919/playlist.m3u8
+#EXTINF:-1 tvg-id="TVArapuan.br@SD" tvg-logo="https://i.imgur.com/3395A2h.png" group-title="General",TV Arapuan (720p)
+https://5b7f3c45ab7c2.streamlock.net/arapuan/ngrp:arapuan_all/playlist.m3u8
 #EXTINF:-1 tvg-id="TVBRICSPortuguese.br@SD" tvg-logo="https://i.imgur.com/vLpm8tN.png" group-title="General",TV BRICS Portuguese (1080p)
 https://porbrics.mediacdn.ru/cdn/brics/portuguese/playlist.m3u8
 #EXTINF:-1 tvg-id="TVBrusque.br@SD" tvg-logo="https://i.imgur.com/J2EAZPS.png" group-title="News",TV Brusque (720p)
